@@ -1,0 +1,11 @@
+{
+  "name": "Kids Center",
+  "short_name": "Kids Center",
+  "description": "Kids Center reabilitasiya və inkişaf mərkəzi",
+  "lang": "az",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f0f3f7",
+  "theme_color": "#6c5ce7"
+}
