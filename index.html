@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kids Center</title>
+    <meta name="theme-color" content="#6c5ce7">
+    <meta name="description" content="Kids Center reabilitasiya və inkişaf mərkəzi">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+      
+       .faq-clean{
+  max-width:900px;
+  margin:auto;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.faq-row{
+  border-bottom:1px solid #e5e7eb;
+}
+
+.faq-row input{
+  display:none;
+}
+
+.faq-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 10px;
+  cursor:pointer;
+  font-size:18px;
+  font-weight:600;
+  color:#111827;
+  transition:.25s;
+}
+
+.faq-title:hover{
+  background:#f9fafb;
+}
+
+.arrow{
+  transition:.3s;
+  font-size:18px;
+}
+
+.faq-row input:checked + .faq-title .arrow{
+  transform:rotate(90deg);
+}
+
+/* main content */
+.faq-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .35s ease;
+  background:#fafafa;
+}
+
+.faq-row input:checked ~ .faq-content{
+  max-height:1000px;
+}
+
+/* sub items */
+.sub-row{
+  border-top:1px solid #eee;
+}
+
+.sub-row input{
+  display:none;
+}
+
+.sub-title{
+  display:flex;
+  justify-content:space-between;
+  padding:14px 30px;
+  cursor:pointer;
+  font-weight:500;
+  color:#374151;
+}
+
+.sub-title:hover{
+  background:#f3f4f6;
+}
+
+.sub-row input:checked + .sub-title .arrow{
+  transform:rotate(90deg);
+}
+
+.sub-content{
+  max-height:0;
+  overflow:hidden;
+  padding:0 45px;
+  font-size:14px;
+  color:#6b7280;
+  transition:max-height .3s ease, padding .25s;
+}
+
+.sub-row input:checked ~ .sub-content{
+  max-height:200px;
+  padding:10px 45px 18px;
+}
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --accent: #ff7675; 
+            --yellow: #fdcb6e;
+            --bg: #f0f3f7;
+            --dark: #2d3436;
+            --whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--dark);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+        }
+
+      nav .container{
+          display:flex;
+        justify-content:space-between;
+      align-items:center;
+        position:relative;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-reg {
+            background: var(--primary);
+            color: white !important;
+            padding: 10px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgb(239, 246, 255) 0%, rgb(219, 228, 255) 100%);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text span { color: var(--primary); }
+
+        .hero-img img {
+            width: 100%;
+            filter: drop-shadow(20px 20px 50px rgba(0,0,0,0.1));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .courses { padding: 100px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .card:hover { transform: translateY(-10px);
+           box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card i { font-size: 50px;
+           margin-bottom: 20px; 
+           display: block; }
+.avaut { padding: 100px 0;
+        background: white; }
+        .avout-content { max-width: 800px;
+           margin: 0 auto;
+            text-align: center;
+             font-size: 1.2rem; 
+             line-height: 1.8; }
+        .about { padding: 100px 0;
+           background: white; }
+        .about-content { max-width: 800px;
+           margin: 0 auto; 
+           text-align: center;
+            font-size: 1.2rem; 
+            line-height: 1.8; }
+        .contact {
+            padding: 100px 0;
+            background: var(--primary);
+            border-radius: 50px 50px 0 0;
+            color: white;
+        }
+.apaut { padding: 100px 0; background: white; }
+        .apout-content { 
+          display:flex;
+        gap:30px;
+        flex-wrap:wrap;; }
+
+        .contact {
+            padding: 100px 0;
+            background: var(--primary);
+            border-radius: 50px 50px 0 0;
+            color: white;
+        }
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-links { display: flex; flex-direction: column; gap: 20px; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-item:hover { background: rgba(255, 255, 255, 0.2); transform: translateX(10px); }
+        .contact-item i { font-size: 30px; margin-right: 20px; }
+
+        .qr-card {
+            background: white;
+            padding: 40px;
+            border-radius: 40px;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .qr-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            border: 5px solid var(--primary);
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .qr-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        footer { text-align: center; padding: 30px; background: #eee; }
+
+        @media (max-width: 768px) {
+            .hero-grid, .contact-box { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
+            .hero-text h1 { font-size: 2.5rem; }
+        }
+
+        .photo-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        /* Çatbot Stilləri */
+        #chat-bubble {
+            position: fixed; bottom: 20px; right: 20px;
+            width: 65px; height: 65px; background: var(--primary);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 28px; cursor: pointer; z-index: 2000;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: 0.3s;
+        }
+        #chat-window {
+            position: fixed; bottom: 95px; right: 20px;
+            width: 330px; height: 480px; background: white;
+            border-radius: 25px; overflow: hidden; display: none;
+            flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 2000;
+            border: 1px solid #f0f0f0;
+        }
+        #chat-header { background: var(--primary); color: white; padding: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        #chat-msgs { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #fafafa; }
+        .msg { padding: 10px 15px; border-radius: 18px; max-width: 85%; line-height: 1.5; font-size: 14px; }
+        .bot-msg { background: #eee; align-self: flex-start; border-bottom-left-radius: 2px; color: #333; }
+        .user-msg { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        #chat-input-area { display: flex; padding: 15px; border-top: 1px solid #eee; background: white; }
+        #chat-input { flex: 1; border: none; outline: none; font-size: 15px; }
+        #chat-send { background: none; border: none; color: var(--primary); font-weight: bold; cursor: pointer; font-size: 16px; }
+        .menu{
+  max-width:500px;
+  margin:auto;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+.item{
+  border-bottom:1px solid #eee;
+}
+
+.item input{
+  display:none;
+}
+
+.item label{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.25s;
+}
+
+.item label:hover{
+  background:#f8fafc;
+}
+
+.arrow{
+  transition:.3s;
+}
+
+/* content */
+.content{
+  max-height:0;
+  overflow:hidden;
+  background:#fafafa;
+  transition:max-height .35s ease;
+}
+
+.item input:checked ~ .content{
+  max-height:500px;
+}
+
+/* arrow rotate */
+.item input:checked + label .arrow{
+  transform:rotate(90deg);
+}
+
+/* sub menu */
+.sub-item{
+  padding:12px 30px;
+  border-top:1px solid #eee;
+  font-weight:500;
+  color:#555;
+  cursor:pointer;
+}
+
+.sub-item:hover{
+  background:#f1f5f9;
+}
+.lang-toggle{
+  padding:6px 12px;
+  border:none;
+  border-radius:8px;
+  background:#ffff;
+  color:#000000;
+  cursor:pointer;
+  font-weight:600;
+  left: 20;
+  position: relative;
+}
+
+.lang-toggle:hover{
+  opacity:.9;
+}
+.cardg{
+background:white;
+padding:20px;
+width:220px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+height:300px;
+}
+
+.cardg:hover{
+transform:scale(1.05);
+}
+
+.cardg img{
+width:100%;
+border-radius:10px;
+}
+
+@media (min-width:769px){
+  .apout > .container > .apout-content > .apout-content{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:24px;
+  }
+
+  .apout > .container > .apout-content > .apout-content .cardg{
+    width:100%;
+    height:auto;
+    min-height:170px;
+    display:grid;
+    grid-template-columns:150px 1fr;
+    grid-template-rows:auto auto;
+    align-items:center;
+    gap:8px 16px;
+    text-align:left;
+    padding:14px;
+  }
+
+  .apout > .container > .apout-content > .apout-content .cardg img{
+    grid-row:1 / 3;
+    width:150px !important;
+    height:140px !important;
+    object-fit:cover;
+    margin:0;
+  }
+}
+
+.tag{
+background:#4caf93;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+display:inline-block;
+margin-top:10px;
+font-size:14px;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+width:70%;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+max-height:90vh;
+overflow-y:auto;
+}
+/* slot 2 modal */
+.modala{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+.modala-content{
+background:white;
+width:70%;
+margin:5% auto;
+padding:30px;
+border-radius:10px;
+max-height:90vh;
+overflow-y:auto;
+}
+
+.profile{
+display:flex;
+gap:40px;
+}
+
+.left{
+width:35%;
+text-align:center;
+}
+
+.left img{
+width:100%;
+border-radius:10px;
+}
+
+.right{
+width:65%;
+}
+
+.close{
+float:right;
+font-size:28px;
+cursor:pointer;
+font-weight:bold;
+}
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px;
+display:none;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.nav-links.active{
+display:flex;
+}
+
+}
+.containera{
+max-width:900px;
+width:90%;
+margin:auto;
+font-family:Arial;
+padding:20px;
+}
+
+/* TABS */
+
+.tabs{
+display:flex;
+gap:20px;
+border-bottom:2px solid #ddd;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.tab{
+background:none;
+border:none;
+padding:10px;
+cursor:pointer;
+font-size:18px;
+}
+
+.tab.active{
+border-bottom:3px solid green;
+color:green;
+font-weight:bold;
+}
+
+/* CONTENT */
+
+.tab-content{
+display:none;
+}
+
+.tab-content.active{
+display:block;
+}
+
+/* IMAGE */
+
+.main-img{
+width:100%;
+max-width:300px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+/* LIST */
+
+.tab-content ul{
+padding-left:20px;
+line-height:1.7;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.tabs{
+flex-direction:column;
+gap:10px;
+}
+
+.tab{
+width:100%;
+text-align:left;
+border-bottom:1px solid #eee;
+font-size:16px;
+}
+
+.tab.active{
+border-bottom:3px solid green;
+}
+
+.containera{
+width:95%;
+padding:15px;
+}
+
+.main-img{
+max-width:100%;
+}
+
+}
+.services{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+/* Mavi isiq effekti */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+bottom:0;
+
+width:100%;
+
+height:4px;
+
+background:linear-gradient(90deg,#7dd3fc,#38bdf8,#0ea5e9);
+
+transition:0.4s;
+
+}
+
+.card:hover::before{
+
+left:0;
+
+}
+
+
+/* icon */
+
+.icon{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+background:#ecfdf5;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:15px;
+
+color:#10b981;
+
+font-size:20px;
+
+}
+
+
+/* title */
+
+.card h3{
+
+font-size:16px;
+
+margin:0;
+
+}
+
+
+/* info */
+
+.card-info{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:0.4s;
+
+margin-top:10px;
+
+color:#555;
+
+font-size:14px;
+
+}
+
+.card.active .card-info{
+
+max-height:200px;
+
+}
+
+    /* Admin panel */
+    #admin-open {
+      position: fixed;
+      right: 22px;
+      bottom: 100px;
+      z-index: 3000;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: #2d3436;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+      font-size: 18px;
+    }
+
+    #admin-open, #admin-panel { display: none !important; }
+
+    #admin-panel {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      background: rgba(24, 30, 40, .62);
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    #admin-panel.open { display: block; }
+
+    .admin-shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.25);
+      overflow: hidden;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: #2d3436;
+      color: #fff;
+    }
+
+    .admin-header h2 { margin: 0; font-size: 24px; }
+    .admin-close, .admin-action {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .admin-close { background: rgba(255,255,255,.14); color: #fff; font-size: 20px; }
+    .admin-body { padding: 24px; }
+    .admin-toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
+    .admin-action { background: var(--primary); color: #fff; }
+    .admin-action.secondary { background: #edf0f4; color: #2d3436; }
+    .admin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .admin-section { border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+    .admin-section h3 { margin-bottom: 14px; color: #2d3436; }
+    .admin-field { display: grid; gap: 6px; margin-bottom: 12px; }
+    .admin-field label { font-size: 13px; font-weight: 700; color: #4b5563; }
+    .admin-field input, .admin-field textarea {
+      width: 100%; border: 1px solid #d9dee7; border-radius: 7px; padding: 10px;
+      font: inherit; color: #2d3436; background: #fff;
+    }
+    .admin-field textarea { min-height: 76px; resize: vertical; }
+    .admin-list { max-height: 430px; overflow-y: auto; padding-right: 5px; }
+    .admin-image-row { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: start; margin-bottom: 14px; }
+    .admin-image-row img { width: 64px; height: 64px; object-fit: cover; border-radius: 7px; background: #f0f3f7; }
+    .admin-note { color: #6b7280; font-size: 13px; margin: 0 0 16px; }
+    @media (max-width: 720px) {
+      #admin-panel { padding: 8px; }
+      .admin-body { padding: 15px; }
+      .admin-grid { grid-template-columns: 1fr; }
+      .admin-header { padding: 16px; }
+    }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Kids Center</a>
+  <button id="langToggle" class="lang-toggle">AZ</button>
+            <div class="menu-toggle" onclick="toggleMenu()">
+              <i class="fas fa-bars"></i>
+                </div>
+
+                <ul class="nav-links" id="navLinks">
+            
+           
+                <li><a href="#home">Ana Səhifə</a></li>
+                <li><a href="#courses">Kurslar</a></li>
+                <li><a href="#photo">Qiymetler</a></li>
+                <li><a href="#about">Haqqımızda</a></li>
+                 <li><a href="#avout">sual-cavab</a></li>
+                 <li><a href="#apout">mutexesisler</a></li>
+                 <li><a href="#contact" class="btn-reg">Əlaqə</a></li>
+            </ul>
+      
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Uşağınızın <span>Gələcəyi</span> Burada Başlayır!</h1>
+                <a href="#contact" class="btn-reg" style="padding: 18px 40px; font-size: 1.1rem; text-decoration: none; display: inline-block;">Əlaqə</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://uploads.onecompiler.io/43d7y9waz/44fjyn8my/Untitled111.png" alt="Hero">
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Populyar Bölmələrimiz</h2>
+          <div class="services">
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h3>Psixoloqla individual məşğələ</h3>
+
+</div>
+
+<div class="card-info">
+Fərdi terapiya uşaqlara və gənclərə duyğularını anlamağa və ifadə
+etməyə kömək edir.
+</div>
+
+</div>
+
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-comments"></i>
+</div>
+
+<h3>Loqopedlə individual məşğələ</h3>
+
+</div>
+
+<div class="card-info">
+Nitq problemlərinin aradan qaldırılması üçün loqoped məşğələləri.
+</div>
+
+</div>
+
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-child"></i>
+</div>
+
+<h3>Özünə xidmət bacarıqları</h3>
+
+</div>
+
+<div class="card-info">
+Uşaqlarda müstəqillik və gündəlik bacarıqlar inkişaf etdirilir.
+</div>
+
+</div>
+
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-music"></i>
+</div>
+
+<h3>Musiqi terapiyası</h3>
+
+</div>
+
+<div class="card-info">
+Musiqi vasitəsilə emosional və sosial inkişaf dəstəklənir.
+</div>
+
+</div>
+
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-paintbrush"></i>
+</div>
+
+<h3>Art terapiya</h3>
+
+</div>
+
+<div class="card-info">
+Rəsm və yaradıcılıq vasitəsilə uşaqların emosional inkişafı.
+</div>
+
+</div>
+
+
+<div class="card">
+<div class="card-top">
+
+<div class="icon">
+<i class="fa-solid fa-seedling"></i>
+</div>
+
+<h3>Qum terapiyası</h3>
+
+</div>
+
+<div class="card-info">
+Qum vasitəsilə psixoloji rahatlama və emosional inkişaf.
+</div>
+
+</div>
+
+</div>
+        </div>
+    </section>
+
+    <section id="photo" class="photo-section">
+        <div class="container">
+            <h2 class="section-title" data-site-field="prices.heading">Qiymetler</h2>
+            <div style="background: white; padding: 50px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+     <div class="containera">
+
+<div class="tabs">
+<button class="tab active" data-tab="standart" data-site-field="prices.standard.tab">Standart paket</button>
+<button class="tab" data-tab="ekonom" data-site-field="prices.economy.tab">Ekonom paket</button>
+<button class="tab" data-tab="elave" data-site-field="prices.additional.tab">Əlavə xidmətlər</button>
+</div>
+
+<div id="standart" class="tab-content active">
+<h3 data-site-field="prices.standard.title">Standart paket</h3>
+<img data-site-image="prices.standard.image" src="b2454a31841fb106c9a28b26201649a5-500x300.jpg" class="main-img" >
+<li data-site-field="prices.standard.item1">10saatliq bağça rejimi (9-00dan 18-00dək)</li>
+<li data-site-field="prices.standard.item2">5dəfə qidalanma(səhər yeməyi,meyvə saatı,nahar yeməyi, şirniyyat saatı, axşam yeməyi)</li>
+<li data-site-field="prices.standard.item3">Hər biri 35 dəqiqə olmaqla-günlük 8dərs,aylıq 120dərs</li>
+
+<p data-site-field="prices.standard.text1">- Hər gün fərdi şəkildə psixoloq,loqoped və maximum iki nəfər olmaqla psixo-pedaqoq məşğələləri;</p>
+<p data-site-field="prices.standard.text2">- Həftədə hər biri iki dəfə olmaqla və maximum iki nəfərdən ibarət kiçik motor məşğələləri-qum terapiya,art terapiya, sensor terapiya;</p>
+<p data-site-field="prices.standard.text3">- Həftədə hər biri iki dəfə olmaqla və maximum iki nəfərdən ibarət böyük motor məşğələləri- idman, velosiped təlimi;</p>
+<p data-site-field="prices.standard.text4">- Həftədə iki dəfə olmaqla maximum 4 nəfərlik musiqi terapiyası,</p>
+<p data-site-field="prices.standard.text5">- Gundəlik sosial gəzintilər və qrup terapiyası, hovuz dərsləri keçirilir.</p>
+<p data-site-field="prices.standard.text6">Bundan başqa günün cədvəli ilə uşağınızı online olaraq izləyə bilərsiniz.
+Aylıq ödəniş 1800 azn təşkil edir. </p>
+
+</div>
+
+<div id="ekonom" class="tab-content">
+<h3 data-site-field="prices.economy.title">Ekonom paket</h3>
+<img data-site-image="prices.economy.image" src="b2454a31841fb106c9a28b26201649a5-500x300.jpg" class="main-img">
+<p data-site-field="prices.economy.text">Övladınız üçün “Special Kids”in təklif etdiyi “Economy Paket”ini seçsəniz, uşaq bağçada yarımgünlük fəaliyyətə qoşulacaq. Yarım günlük proqram saat 09:00 – 13:00 və ya 14:00 – 18:00 – ı əhatə edir. Yarım Günlük Proqrama uşaq bağçasının yarım günlük fəaliyyətinə daxil olan məşğələ və kurslar daxildir.  Aylıq ödəniş 1200 azn-dir.</p>
+</div>
+
+<div id="elave" class="tab-content">
+<h3 data-site-field="prices.additional.title">Əlavə xidmətlər</h3>
+<p data-site-field="prices.additional.text">Övladınız “Special Kids”də təhsil almırsa belə, aşağıda təklif olunan xidmətlərdən yararlana bilərsiniz:</p>
+<li data-site-field="prices.additional.item1">Psixoloq xidməti (45 dəqiqə 25 manat)</li>
+<li data-site-field="prices.additional.item2">Loqoped xidməti   (45 dəqiqə 25 manat)</li>
+<li data-site-field="prices.additional.item3">Özəl pedaqoq xidməti  (45 dəqiqə 25 manat)</li>
+<li data-site-field="prices.additional.item4">Növbətçi Dayə xidməti  (1 saatı 25 manat)</li>
+<li data-site-field="prices.additional.item5">Qum terapiya (45 dəqiqə 25 manat)</li>
+<li data-site-field="prices.additional.item6">Sensor terapiya (45 dəqiqə 25 manat)</li>
+<li data-site-field="prices.additional.item7">Musiqi terapiya (45 dəqiqə 25 manat)</li>
+
+</div>
+
+</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-site-field="about.heading">Haqqımızda</h2>
+            <div class="about-content"> 
+                
+                <h2 data-site-field="about.title">Kids Center”ın məqsədi xüsusi qayğıya ehtiyacı olan uşaqları bağçaya adaptasiya etmək və valideynlərə dəstək verməkdir.</h2>
+                <p data-site-field="about.text1">Kids Center”da təlim prosesinə uşaqlar 2 – 8 yaş aralığında cəlb olunur və uşaqların maraqlarına uyğun olaraq beş qrup fəaliyyət göstərir. Biz həftənin 5 günü 9:00 – dan 18:00 – dək fəaliyyət göstəririk.</p>
+                <p data-site-field="about.text2">Burada rüblük uşaq inkişafı qiymətləndirilməsi aparılır və valideynlər üçün hesabatlar hazırlanır.</p>
+                <p data-site-field="about.text3">dəfədən çox müxtəlif idrak, mədəni – estetik, nitq, fiziki və sosial-emosional və motor bacarıqlarını inkişaf etdirici məşğələlərə qoşulur və müxtəlif əyləncə və istirahət xarakterli tədbirlərdə iştirak edir.“Special Kids”da uşaqların ehtiyaclarına fərdi yanaşma var. Burada rüblük uşaq inkişafı qiymətləndirilməsi aparılır və valideynlər üçün həftəlik tədris və fəaliyyət hesabatı hazırlanır.“Special Kids”da  uşaqlar üçün gündəlik tibbi nəzarət və pediatr müayinəsi təşkil olunur.  Sanitar – gigiyenik vəziyyətin davamlı yaxşılaşdırılması üçün tədbirlər həyata keçirilir. Bundandan əlavə, bağçada xüsusi təhlükəsizlik tədbirləri görülüb, yanğından mühafizə sistemi var.</p>
+                <img data-site-image="about.image1" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/psixoloq-500x300.jpg"width="30%" height="30%">
+                <img data-site-image="about.image2" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/child-learning-count-home-1-500x300.jpg"width="30%" height="30%">
+                <img data-site-image="about.image3" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/img-5294-500x300.jpg"width="30%" height="30%">
+                 <img data-site-image="about.image4" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/img-5749-500x300.jpg"width="30%" height="30%">
+                 <img data-site-image="about.image5" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/img-4471-500x300.jpg"width="30%" height="30%">
+                 <img data-site-image="about.image6" src="https://uploads.onecompiler.io/43d7y9waz/44ekru73k/boy-doing-some-mathematical-exercises-500x300.jpg"width="30%" height="30%">
+            </div>
+        </div>
+    </section>
+<section id="avout" class="avout">
+     <div class="container">
+            <h2 class="section-title">Sual-cavab</h2>
+            <div class="about-content"> 
+<div class="faq-clean">
+
+
+  
+<!-- ==== 1 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m1">
+<label class="faq-title" for="m1">
+  Ümumi məlumat
+  <span class="arrow">›</span>
+</label>
+
+<div class="faq-content">
+
+  <!-- 1 -->
+  <div class="sub-row">
+    <input type="checkbox" id="m1_1">
+    <label class="sub-title" for="m1_1">
+      Uşağımda ASP olub-olmadığını necə bilə bilərəm?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Uşağın davranışını müşahidə edin
+və narahatlığa səbəb olarsa, psixiatra müraciət edin.
+
+Uşağın davrandmətlər məlumatı</p>ışının xüsusiyyətləri erkən yaşda nəzərə çarpa bilər. Onları görməməzlikdən gəlmək olmaz, dərhal bir mütəxəssislə əlaqə saxlamalısınız. Hər hansı bir inkişaf pozuntusunun (yalnız autizm deyil) erkən diaqnozu və erkən müdaxilə uşağın uğurlu reabilitasiyasının vacib göstəriciləridir.</h4>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="sub-row">
+    <input type="checkbox" id="m1_2">
+    <label class="sub-title" for="m1_2">
+      Ətraf mühit faktorları autizmli uşaqlara təsir edə bilərmi?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Bəli, edə bilər. Elmi ictimaiyyətdə autizmin genetik təbiəti ilə bağlı fərziyyənin üstünlük təşkil etməsinə baxmayaraq, ətraf mühit faktorlarının təsirini inkar etmək olmaz. Bu sahədə tədqiqatların həcminin artması sayəsində son 10-15 ildə alimlər bu amillərin öyrənilməsində mühüm irəliləyişlər əldə ediblər. Bunlara aşağıdakılar daxildir: valideyn yaşı, vaxtından əvvəl və/və ya çətin doğuş, hamiləlik intervalı, anada diabetin aşkarlanması, ananın ikinci və/və ya üçüncü trimestr antidepresanları qəbul etməsi və s. Ətraf mühit faktorları tək başına nadir hallarda autizmə səbəb olur, lakin genetik faktorlarla birlikdə inkişaf pozuntusunun riskini əhəmiyyətli dərəcədə artırırlar..</h4>
+    </div>
+
+  </div>
+
+  <!-- 3 -->
+  <div class="sub-row">
+    <input type="checkbox" id="m1_3">
+    <label class="sub-title" for="m1_3">
+      Danışmayan ASP olan uşaq sonradan danışa bilərmi?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Bəli, ola bilər. Autizm spektri pozuntusu (ASP) olan bir çox uşaqda ünsiyyət və dil inkişafında gecikmələr və ya çətinliklər var. Bu gecikmələrin də öz spektri var və yüngül formadan ağır formalara qədər dəyişir.
+
+Orta hesabla, ASP ilə olan uşaqların təxminən 40% -i "nitqsiz" olaraq təsnif edilir, yəni onlar yalnız bir neçə tək sözdən istifadə edirlər və ya danışıq dilindən ümumiyyətlə istifadə etmirlər. Bu uşaqlar hər zaman ətrafla ünsiyyət qura bilmirlər, bir çox "nitqsiz" uşaqlar yazılı dildən və ya alternativ ünsiyyət üsullarından (məsələn, PECS kartları) istifadə edə bilərlər. ASP ilə olan "nitqsiz" uşaqlar üzərində aparılan tədqiqatların çoxu müvəffəqiyyətli dil inkişafının proqnozlaşdırıcısı kimi erkən müdaxiləyə yönəlmişdir..</h4>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="sub-row">
+    <input type="checkbox" id="m1_4">
+    <label class="sub-title" for="m1_4">
+      Görünüşdən ASP anlamaq olarmı?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Xeyr, autizm xaricən görünmür.
+
+Diaqnoz yalnız davranışın peşəkar müşahidəsinin nəticələrinə əsasən qoyula bilər. İlk dəfə görüşdüyünüz birinin autizm ola biləcəyindən narahatsınızsa, diaqnoz qoyulub qoyulmamasından asılı olmayaraq hər kəsin dəyərli olduğunu və hörmətə layiq olduğunu unutmayın.
+
+</h4>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="sub-row">
+    <input type="checkbox" id="m1_5">
+    <label class="sub-title" for="m1_5">
+      ASP yaşla inkişaf edə bilərmi?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Xeyr, ola bilməz. Rəsmi diaqnozun yetkinlik dövründə qoyulduğu hallar olsa da, bu, zamanla bir insanın autizm inkişaf etdirdiyi anlamına gəlmir.
+Autizmin mühüm diaqnostik meyarlarından biri də erkən uşaqlıqda simptomların başlamasıdır.
+
+</h4>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<!-- ==== 2 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m2">
+<label class="faq-title" for="m2">
+  Təhsil
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m2_1">
+    <label class="sub-title" for="m2_1">
+    ASP olan uşaq necə davranır?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      Onlar yaşadıqları mühitə qarşı biganədirlər.
+      Danışıq bacarıqları gec inkişaf edir.
+
+      Həmyaşıdları ilə dialoqa girmir, onlarla oyunlara qatılmır, özbaşına oyun oynamağa üstünlük verirlər.
+
+        Əl çalmaq, tullanmaq,öz etrafında fırlanmaq kimi müəyyən hərəkətləri davamlı olaraq təkrarlayırlar.
+
+      Onlar bəzi oyuncaqların və ya əşyaların hissələrinə ilişib qalırlar və ya sadəcə onlarla oynayırlar (məsələn, avtomobilin təkərini daim döndərmək).
+
+      Onların təhlükə qavrayışı zəifdir.
+
+      Qucaqlamaq, öpmək kimi hərəkətləri sevmirlər.
+    </div>
+  </div>
+
+  <div class="sub-row">
+    <input type="checkbox" id="m2_2">
+    <label class="sub-title" for="m2_2">
+      Hansı hallarda psixoloqa müraciət etmək lazımdır?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Ailələr uşaqları ilə bağlı aşağıdakı vəziyyətlərdə psixoloqlara müraciət edə bilərlər.
+• İnkişafa nəzarət üçün.
+• Davranış və uyğunlaşma problemləri ,xəstəliklər zamani psixoloji dəstək üçün.
+• Ailə ilə bağlı problemlər 
+0-6 yaş dövründə uşaqların inkişafının yoxlanılması üçün vaxtaşırı mütəxəssisə aparılmalıdır. Valideynlər uşaq inkişafı ilə bağlı məlumat əldə edərək,
+uşaqlarının inkişafının normal olub-olmadığını öyrənirlər. İnkişafa nəzarət zamanı uşaqların inkişafı 5 qrupda yoxlanılır; fiziki, hərəkət, dil, sosial-emosional, zəka inkişafı.
+Geridə qalan inkişaf sahələrini və bu sahələri dəstəkləmək üçün nə etməli olduğunuzu öyrənəcəksiniz. 
+Uşağınızın inkişafını dəstəkləmək üçün nə edə biləcəyinizi öyrənirsiniz.
+.</h4>
+    </div>
+</div>
+
+    <div class="sub-row">
+    <input type="checkbox" id="m2_3">
+    <label class="sub-title" for="m2_3">
+    Hansı hallarda loqopedə müraciət etmək lazımdır?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Nitq problemləri hal-hazırda dövrümüzün ən qlobal məsələsinə çevrilmişdir. Lakin buna baxmayaraq bəzi valideynlərimiz vardır ki, bu problemləri problem kimi görmür, zamanla düzələcəyini düşünürlər. Əgər 2.5-3 yaşı olan sağlam bir uşaq fraza nitqini ümumiyyətlə bilmirsə və ən yaxşı halda yalnız tək sadə sözlər danışırsa və ya 3 yaşlı bir uşaq hələ də yalnız “baba”, “nənə” kəlməsindən başqa heç nə söyləmirsə, artıq valideyn həyəcan təbili çalmalıdır. Bu nitqin inkişafında ləngimənin olduğundan xəbər verir. Çünki bu sahə həm uzunmüddətli, həm də səbr tələb edən bir işdir. Valideyn uşağın bu yaşında narahat olmursa, məktəbəqədər və ya məktəb yaş dövründə uşağın necə çətinlik çəkəcəyinin şahid olacaqdır. Bu, özünü psixoloji hal kimi də büruzə verəcəkdir. Nitqi gecikmiş uşaqlarda məktəb yaş dövründə mütləq ki, hər hansı səs problemləri qalacaqdır.</h4>
+    </div>
+</div>
+
+    <div class="sub-row">
+    <input type="checkbox" id="m2_4">
+    <label class="sub-title" for="m2_4">
+Hansı yaşda valideynlər övladlarının nitqinə diqqət yetirməlidirlər?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>Körpə dünyaya gəldiyi ilk günlərdən valideynlər nitqin inkişafı ilə məşğul olmağa başlaya bilər. Bu prosesə öncə körpənin necə ağladığına diqqət etməklə başlaya bilərsiniz. Uşağın ağlaması çox fərqlidir, həyatın ilk ayında ağlaması xüsusilə ifadəli olur və körpənin nəyə ehtiyac duyduğunu anlamaq mümkündür: ağrıyır, yemək istəyir və ya yalnız anasının onu qucağına götürməsini istəyir.  Uşaq hər şeyi intonasiya baxımından düzgün edirsə, diqqətli bir ana fərqi anlayır və bu istəklərə cavab verməyi tez öyrənir.  Körpə monoton, yəni eyni səviyyədə ağlayırsa və səsə yaxşı cavab vermirsə, həkimə müraciət etmək məsləhətdir...</h4>
+    </div>
+</div>
+  
+    
+  </div>
+</div>
+
+<!-- ==== 3 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m3">
+<label class="faq-title" for="m3">
+  Məşğələlər
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m3_1">
+    <label class="sub-title" for="m3_1">
+      Musiqi terapiyası nədir?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+     <h4> Uşaqlarda sosial bacarıqların təkmilləşdirilməsində, duyğuları ifadə etməkdə, özünə inamın artmasında, diqqətin inkişafında, kiçik və böyük motor bacarıqların inkişafında musiqi terapiyasının böyük təsiri vardır.</h4>
+    </div>
+  </div>
+
+   <div class="sub-row">
+    <input type="checkbox" id="m3_2">
+    <label class="sub-title" for="m3_2">
+     Musiqi uşaqlar üçün niyə vacibdir?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+   <h4>Musiqi, uşaqları mənəvi cəhətcə zənginləşdirməklə yanaşı, onların fiziki və intellektual inkişafında mühüm rol oynayır.</h4>
+    </div>
+  </div>
+
+     <div class="sub-row">
+    <input type="checkbox" id="m3_3">
+    <label class="sub-title" for="m3_3">
+   Oyun zamanı nələrə diqqət edilməlidir?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+   <h4> Ilk öncə oyun materialı seçilməli və oyundan kənar materiallar o mühitdə saxlanılmamalıdır. Yəni, ətrafda uşağın diqqətini yayındıracaq əlavə oyuncaqlar və ya əşyalar olmamalıdır.
+
+Oyun oynayarkən ona fərqli səs tonları ilə müraciət etməli, monoton danışıq tonlarından qaçınılmalıdır.
+Oyun zamanı usaq ilə fiziki əlaqə saxlamağa xüsusi diqqət yetirilməlidir.</h4>
+    </div>
+  </div>
+
+
+  <div class="sub-row">
+    <input type="checkbox" id="m3_4">
+    <label class="sub-title" for="m3_4">
+   Art Terapiya nədir?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+   <h4> Psixoloji pozuntuları müalicə etmək və psixi sağlamlığı gücləndirmək üçün bədii üsullardan istifadə sənət terapiyası kimi tanınır. Art terapiyanın əsas prinsipi mühakimə etmədən proses və nəticə almaqdır. Yalnız bu yolla insan öz daxili dünyası ilə görüşə,  inam formalaşdıra bilər. Yaradıcılıqda uşağın həm şüurlu, həm də şüursuz şəkildə gizli istək və duyğularını ifadə etməsi çox daha asandır. Həqiqətən də, bu üsulda  birbaşa danışmağa ehtiyac yoxdur -  rəng və ya  digər metodlarla nəticə əldə etmək olar. .</h4>
+    </div>
+  </div>
+
+
+
+</div>
+</div>
+
+<!-- ==== 4 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m4">
+<label class="faq-title" for="m4">
+  Qidalanma
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m4_1">
+    <label class="sub-title" for="m4_1">
+     <h4>Uşaqların qida rejimini evdə necə həyata keçirə bilərik?</h4>
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+   <h4></h4>Bayram və istirahət günlərində uşaq evdə qalarkən qida rejiminin pozulmaması üçün “Special Kids”ın tərtib etdiyi menyudan istifadə etməyi valideynlərə tövsiyə edirik və uşağın fərdi qida ehtiyacları əsasında hazırlanan menyunu valideynə təqdim edirik.</h4>
+    </div>
+  </div>
+
+
+  <div class="sub-row">
+    <input type="checkbox" id="m4_2">
+    <label class="sub-title" for="m4_2">
+      Əgər uşaq “ Kids Center”də yeməklərdən imtina edərsə, hansı tədbir görülür?
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      <h4>“ Kids center” uşaqlara fərdi inkişaf planlı yanaşdığından uşaqların damaq dadları, zövqləri mütləq nəzərə alınır və bunun əsasında menyu tərtib edilir. Belə bir hal baş verərsə, yalnız ünsiyət vasitəsi və həvəsləndirici oyunlarla uşağın qidalanması təmin olunur.</h4>
+    </div>
+  </div>
+
+
+
+</div>
+</div>
+
+<!-- ==== 5 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m5">
+<label class="faq-title" for="m5">
+  Sağlamlıq və gigiyena
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m5_1">
+    <label class="sub-title" for="m5_1">
+      Tibbi nəzarət
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      Uşaqlar gündəlik tibbi nəzarətdə saxlanılır.
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==== 6 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m6">
+<label class="faq-title" for="m6">
+  Təhlükəsizlik
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m6_1">
+    <label class="sub-title" for="m6_1">
+      Kamera sistemi
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      Mərkəz 24/7 kamera ilə qorunur.
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ==== 7 ==== -->
+<div class="faq-row">
+<input type="checkbox" id="m7">
+<label class="faq-title" for="m7">
+  Yuxu rejimi
+  <span class="arrow">›</span>
+</label>
+<div class="faq-content">
+  <div class="sub-row">
+    <input type="checkbox" id="m7_1">
+    <label class="sub-title" for="m7_1">
+      Günorta yuxusu
+      <span class="arrow">›</span>
+    </label>
+    <div class="sub-content">
+      Uşaqlar üçün rahat yuxu otağı mövcuddur.
+    </div>
+  </div>
+</div>
+</div>
+            </div>
+</section>
+ <section id="apout" class="apout">
+        <div class="container">
+            <h2 class="section-title">mutexesisler</h2>
+            <div class="apout-content"> 
+<div class="apout-content">
+
+<!-- KART 1 -->
+<div class="cardg" onclick="openModal('modal1')">
+<img data-site-image="specialists.1.image" src="https://uploads.onecompiler.io/43d7y9waz/3x2zp2yd7/image_1_1772889606582.jpg" width="300px" height="210px">
+<h3 data-site-field="specialists.1.name">Yeganə Sadıxova</h3>
+<span class="tag">Psixo-pedaqoq</span>
+</div>
+
+<!-- KART 2 -->
+<div class="cardg" onclick="openModal('modal2')">
+<img data-site-image="specialists.2.image" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png">
+<h3 data-site-field="specialists.2.name">Slot boşdur</h3>
+<span class="tag">Loqoped</span>
+</div>
+
+<!-- KART 3 -->
+<div class="cardg" onclick="openModal('modal3')">
+<img data-site-image="specialists.3.image" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png">
+<h3 data-site-field="specialists.3.name">Slot boşdur</h3>
+<span class="tag">Psixoloq</span>
+</div>
+
+<!-- KART 4 -->
+<div class="cardg" onclick="openModal('modal4')">
+<img data-site-image="specialists.4.image" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png">
+<h3 data-site-field="specialists.4.name">Slot boşdur</h3>
+<span class="tag">Dayə</span>
+</div>
+
+<!-- KART 5 -->
+<div class="cardg" onclick="openModal('modal5')">
+<img data-site-image="specialists.5.image" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png">
+<h3 data-site-field="specialists.5.name">Slot boşdur</h3>
+<span class="tag">Pedaqoq</span>
+</div>
+
+<!-- KART 6 -->
+<div class="cardg" onclick="openModal('modal6')">
+<img data-site-image="specialists.6.image" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png">
+<h3 data-site-field="specialists.6.name">Slot boşdur</h3>
+<span class="tag">Müəllim</span>
+</div>
+
+</div>
+<!-- MODAL 1 -->
+<div id="modal1" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal1')">×</span>
+<img data-site-image="specialists.1.detailImage" src="https://uploads.onecompiler.io/43d7y9waz/3x2zp2yd7/imageaa.jpg" width="200px">
+<h2 data-site-field="specialists.1.role">Psixo-pedaqoq</h2>
+<ul data-site-field="specialists.1.bio">Arzu Mikayılova 2001 – 2005-ci illərdə Azərbaycan Müəllimlər İnstitutunun İbtidai təhsilin pedaqogikası və metodikası fakültəsində təhsil alıb.
+
+2005-2007-ci illərdə magistr dərəcəsi alıb.
+2005 – 2014-cü illərdə Bakı Biznes və Kooperasiya kollecində Fənn birləşmə sədri və pedaqoq vəzifəsində çalışıb.
+2014-2015-ci illərdə tədris mərkəzlərindən birində müəllim kimi fəaliyyət göstərib. “Xüsusi qayğıya ehtiyacı olan uşaqlarda akademik bacarıqların analizi və öyrədilməsi” və “Xüsusi qayğıya ehtiyacı olan uşaqlarda cinsi inkişaf və inkişafın kritik davranışları”, “Cinsi tərbiyənin verilməsi və istismardan qorunma yollarının öyrədilməsi” kimi təlimlərdə uğurla iştirak edib.
+Hal-hazırda “Special Kids” Bağça tipli Reabilitasiya mərkəzində psixo-pedaqoq vəzifəsində çalışır</ul>
+</div>
+</div>
+
+<!-- MODAL 2 -->
+<div id="modal2" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal2')">×</span>
+<img data-site-image="specialists.2.detailImage" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png" width="200px">
+<h2 data-site-field="specialists.2.role">Loqoped</h2>
+
+<p data-site-field="specialists.2.bio">Buraya məlumat yaz.</p>
+</div>
+</div>
+
+<!-- MODAL 3 -->
+<div id="modal3" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal3')">×</span>
+<img data-site-image="specialists.3.detailImage" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png" width="200px">
+<h2 data-site-field="specialists.3.role">Psixoloq</h2>
+<p data-site-field="specialists.3.bio">Buraya məlumat yaz.</p>
+</div>
+</div>
+
+<!-- MODAL 4 -->
+<div id="modal4" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal4')">×</span>
+<img data-site-image="specialists.4.detailImage" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png" width="200px">
+<h2 data-site-field="specialists.4.role">Dayə</h2>
+<p data-site-field="specialists.4.bio">Buraya məlumat yaz.</p>
+</div>
+</div>
+
+<!-- MODAL 5 -->
+<div id="modal5" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal5')">×</span>
+<img data-site-image="specialists.5.detailImage" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png" width="200px">
+<h2 data-site-field="specialists.5.role">Pedaqoq</h2>
+<p data-site-field="specialists.5.bio">Buraya məlumat yaz.</p>
+</div>
+</div>
+
+<!-- MODAL 6 -->
+<div id="modal6" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeModal('modal6')">×</span>
+<img data-site-image="specialists.6.detailImage" src="ChatGPT Image Mar 7, 2026, 01_53_53 PM.png" width="200px">
+<h2 data-site-field="specialists.6.role">Müəllim</h2>
+<p data-site-field="specialists.6.bio">Buraya məlumat yaz.</p>
+</div>
+</div>
+        </div>
+
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color:white">Bizimlə Əlaqə</h2>
+            <div class="contact-box">
+                <div class="contact-links">
+                    <h3>Sürətli Əlaqə 🚀</h3>
+                    <a data-site-link="contact.phone" href="https://wa.me/994553906970" class="contact-item" target="_blank">
+                        <i class="fab fa-whatsapp" style="color:var(--whatsapp)"></i>
+                        <span data-site-field="contact.phone">+994 55 390 69 70 (WhatsApp)</span>
+                    </a>
+                    <a href="mailto:kidscenter040@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope" style="color:var(--yellow)"></i>
+                        <span>kidscenter040@gmail.com (Gmail)</span>
+                    </a>
+                    <a href="https://www.instagram.com/kidscenter__baku/" class="contact-item" target="_blank">
+                        <i class="fab fa-instagram" style="color:#ff7675"></i>
+                        <span>@kidscenter__baku (Instagram)</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@kids_center1?is_from_webapp=1&sender_device=pc" target="_blank" class="contact-item">
+                    <i class="fab fa-tiktok"></i> 
+                    <span>kids_center1(Tiktok)</span>
+                    </a>
+                </div>
+                <div class="qr-card">
+                    <div class="qr-frame">
+                        <img src="https://uploads.onecompiler.io/43d7y9waz/44b3c8y78/BADam99FEE-4CF6-49F1-A2F3-EC6F283784E3.jpg" alt="QR">
+                    </div>
+                    <h3>Instagram QR Kodu</h3>
+                    <p>Skan et və səhifəmizə birbaşa keç!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kids Center. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <div id="chat-bubble" onclick="toggleChat()"><i class="fas fa-comment-dots"></i></div>
+
+    <div id="chat-window">
+        <div id="chat-header">
+            <span>Kids Center Köməkçisi</span>
+            <span onclick="toggleChat()" style="cursor:pointer; font-size: 24px;">&times;</span>
+        </div>
+        <div id="chat-msgs">
+            <div class="msg bot-msg">Salam 😊 Kids Center-ə xoş gəlmisiniz! Psixoloq, loqoped, dayə və digər xidmətlərimizin qiymətləri ilə bağlı kömək edə bilərəm. Nə barədə məlumat almaq istərdiniz?</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Məsələn: loqoped qiyməti..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <button id="chat-send" onclick="sendMessage()">Göndər</button>
+        </div>
+    </div>
+
+    <button id="admin-open" type="button" title="Admin paneli"><i class="fas fa-gear"></i></button>
+
+    <div id="admin-panel" aria-hidden="true">
+      <div class="admin-shell">
+        <div class="admin-header">
+          <h2><i class="fas fa-sliders"></i> Admin paneli</h2>
+          <button class="admin-close" id="admin-close" type="button" aria-label="Bağla">&times;</button>
+        </div>
+        <div class="admin-body">
+          <div class="admin-toolbar">
+            <button class="admin-action" id="admin-save" type="button"><i class="fas fa-save"></i> Yadda saxla</button>
+            <button class="admin-action secondary" id="admin-reset" type="button"><i class="fas fa-rotate-left"></i> Sıfırla</button>
+            <button class="admin-action secondary" id="admin-live" type="button"><i class="fas fa-eye"></i> Canlı görünüşü aç</button>
+          </div>
+          <p class="admin-note">Dəyişikliklər bu brauzerdə yadda saxlanılır. Şəkil üçün URL və ya kompüterdən fayl seçə bilərsiniz.</p>
+          <div class="admin-grid">
+            <section class="admin-section">
+              <h3>Ümumi görünüş</h3>
+              <div class="admin-field"><label for="admin-site-title">Brauzer başlığı</label><input id="admin-site-title" type="text"></div>
+              <div class="admin-field"><label for="admin-primary">Əsas rəng</label><input id="admin-primary" type="color"></div>
+              <div class="admin-field"><label for="admin-secondary">İkinci rəng</label><input id="admin-secondary" type="color"></div>
+              <div class="admin-field"><label for="admin-accent">Vurğu rəngi</label><input id="admin-accent" type="color"></div>
+              <h3>Mətnlər</h3>
+              <div class="admin-list" id="admin-text-list"></div>
+            </section>
+            <section class="admin-section">
+              <h3>Şəkillər</h3>
+              <div class="admin-list" id="admin-image-list"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        // Navbar kölgəsi
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+            } else {
+                nav.style.boxShadow = "none";
+            }
+        });
+        const botRules = [ 
+            {
+                keywords: ["psixoloq nedir?","pisxoloq nedir","pisxoloq nedi?","pisixoloq nedi","psixoloq ne?","psixoloq ne","psixoloq nədir?","psixoloq nədi","psixoloq nə" ],
+                response: "Psixoloq, insan psixikasını, davranışlarını, düşüncələrini və emosiyalarını öyrənən, bu biliklərini istifadə edərək fərdlərə və qruplara psixoloji problemlərin həllində, özünü dərk etməsində və rifah halını yaxşılaşdırmasında kömək edən ali təhsilli mütəxəssisdir; dərman təyin etmək hüququ yoxdur, lakin terapiya və konsultasiya yoluyla dəstək olur. "
+            },
+              {
+                 keywords: ["psixoloq ", "psixolok  ", "psixolog  ", "psixoloğ", "psixolok", "psixoloqq", "psixolq", "psixolo", "psixoloqu", "psixoloqla    " ],
+                response: "Psixoloq xidməti: 45 dəqiqə 20 manatdır."
+            },
+            {
+                keywords: [
+                "laqapet nedir", "laqapet nedi", " lapapet nədir", "laqapet nədi",
+                "laqapet nə","loqoped nedir","loqoped nedi","loqoped ne","loqoped nə",
+                "loqaped nedir","loqaped nedi","loqaped ne"," logoped nedir ",
+                "logoped nedir","logoped ne ", "logopet nnedi","logopet nedir ",
+                " logoped nedi?", "laqapet nedir?","laqapet nedi?",
+                "lapapet nədir?","laqapet nədi?","laqapet nə?","logoped ne"
+
+                ],
+                response: "Loqoped (və ya laqapet), nitq və danışıq qüsurları olan insanlara diaqnoz qoyan və onların dil bacarıqlarını yaxşılaşdıran mütəxəssisdir."
+            },
+                 {
+                keywords: ["loqoped", "laqoped", "laqopet", "laqapet", "loqopet", "logoped"],
+                response: "Loqoped xidməti: 45 dəqiqə 20 manatdır."
+            },
+        
+            {
+                keywords: ["daye", "dayə", "baxıcı", "baxici"],
+                response: "Növbətçi Dayə xidməti: 1 saatı 25 manatdır."
+            }, 
+            {
+                keywords: ["salam", "salmm", "slm", "slam","slem"],
+                response: "Salam! 🌸 Kids Center-ə xoş gəlmisiniz. Hər hansı xidmət haqqında məlumat istəyirsiniz?"
+            },
+            
+           
+            {
+                keywords: ["əlaqə", "elaqe", "nömrə", "nomre", "telefon"],
+                response: "Bizimlə əlaqə: +994 55 390 69 70"
+            }, 
+            {
+                keywords: ["sagolun", "sagol", "cox sagolun", "sg","sag ol","oldu sagolun","təşəkür edirem","teşekür edirem","tesekur edirem","tsk","muck","təşəkkür edirem","tesekkur edirik","tesekur","tesekur ediriy","çox təşəkkür edirəm","cox tesekkur edirem","sağ ol 😊","təşəkkür 🙏","thanks 👍","sagol❤️" ],
+                response: "Rica edirəm! Kömək edə bildimsə, çox sevindim.,Hər zaman! Lazım olsa, yenə yaz 😉"
+            },
+             {
+                keywords: ["pedaqoq ne", "pedaqoq nedi", "pedaqoq nedir","pedaqoq ne?","pedaqoq nedi?","pedeqoq nedir?","pedaqoq nə","pedaqoq nədi","pedaqoq nədir","pedaqoq nə?","pedaqoq nədir?","pedaqoq nədir?"],
+                response: "Pedaqoq, uşaqların və yeniyetmələrin təlim, tərbiyə və inkişafı ilə məşğul olan təhsil mütəxəssisidir. Bu şəxslər uşaqların əqli, psixoloji inkişafını araşdırır, onlara bilik və bacarıqlar aşılayır, həmçinin valideynlərə övladlarının düzgün tərbiyəsi və təhsili ilə bağlı dəstək (pedaqoji məsləhət) verirlər. "
+            },
+            {
+                keywords: ["pedaqoq", "pedaqoq", "petaqoq",],
+                response: "Özəl pedaqoq xidməti: 45 dəqiqə 25 manatdır."
+            },
+           
+           
+            
+        ];
+
+        const chatWindow = document.getElementById('chat-window');
+        const chatMsgs = document.getElementById('chat-msgs');
+        const chatInput = document.getElementById('chat-input');
+
+        function toggleChat() {
+            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendMessage() {
+            const userInput = chatInput.value.trim();
+            if (!userInput) return;
+
+            addMessage(userInput, 'user-msg');
+            chatInput.value = '';
+
+            const text = userInput.toLowerCase();
+            let response = "Bu sual bir az spesifikdir 😊 Daha dəqiq cavab üçün WhatsApp-dan yazmağınız daha yaxşı olar:💚 +994 55 390 69 70";
+            for (let rule of botRules) {
+                const found = rule.keywords.some(key => text.includes(key));
+                if (found) {
+                    response = rule.response;
+                    break;
+                }
+            }
+
+            setTimeout(() => addMessage(response, 'bot-msg'), 500);
+        }
+
+        function addMessage(text, className) {
+            const div = document.createElement('div');
+            div.className = 'msg ' + className;
+            div.innerText = text;
+            chatMsgs.appendChild(div);
+            chatMsgs.scrollTop = chatMsgs.scrollHeight;
+        };
+    
+let currentLang = "az";
+let isTranslating = false;
+
+function getTranslatableElements() {
+  return document.querySelectorAll(
+    "h1, h2, h3, p, a, h4, label, .sub-content, .bot-msg, .section-title"
+  );
+}
+
+
+function storeOriginalTexts() {
+  const elements = getTranslatableElements();
+
+  elements.forEach(el => {
+    if (!el.dataset.original) {
+      el.dataset.original = el.innerText;
+    }
+  });
+}
+
+storeOriginalTexts();
+
+document.getElementById("langToggle").addEventListener("click", async () => {
+  if (isTranslating) return; // spam qoruma
+  isTranslating = true;
+
+  const btn = document.getElementById("langToggle");
+  const targetLang = currentLang === "az" ? "ru" : "az";
+  const elements = getTranslatableElements();
+
+  try {
+    
+    if (targetLang === "az") {
+      elements.forEach(el => {
+        if (el.dataset.original) {
+          el.innerText = el.dataset.original;
+        }
+      });
+    } else {
+     
+      const texts = Array.from(elements).map(el => el.dataset.original || "");
+      const joined = texts.join(" ||| ");
+
+      const res = await fetch(
+        `https://translate.googleapis.com/translate_a/single?client=gtx&sl=az&tl=ru&dt=t&q=${encodeURIComponent(joined)}`
+      );
+
+      const data = await res.json();
+      const translated = data[0][0][0].split(" ||| ");
+
+      elements.forEach((el, i) => {
+        if (translated[i]) {
+          el.innerText = translated[i];
+        }
+      });
+    }
+
+    currentLang = targetLang;
+    btn.textContent = currentLang.toUpperCase();
+
+  } catch (e) {
+    console.log("translate error", e);
+  }
+
+  isTranslating = false;
+});
+function openModal(id){
+document.getElementById(id).style.display="flex";
+}
+
+function closeModal(id){
+document.getElementById(id).style.display="none";
+}
+function toggleMenu(){
+const menu = document.getElementById("navLinks");
+menu.classList.toggle("active");
+}
+document.querySelectorAll("#navLinks a").forEach(link => {
+link.addEventListener("click", () => {
+document.getElementById("navLinks").classList.remove("active");
+});
+});
+
+const adminPanel = document.getElementById("admin-panel");
+const adminTextList = document.getElementById("admin-text-list");
+const adminImageList = document.getElementById("admin-image-list");
+const adminStorageKey = "kids-center-admin-state";
+let adminTextNodes = [];
+let adminImages = [];
+
+function adminOpen() {
+  adminPanel.classList.add("open");
+  adminPanel.setAttribute("aria-hidden", "false");
+  buildAdminLists();
+}
+
+function adminClose() {
+  adminPanel.classList.remove("open");
+  adminPanel.setAttribute("aria-hidden", "true");
+}
+
+function getAdminTextNodes() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  let node;
+  while ((node = walker.nextNode())) {
+    const parent = node.parentElement;
+    if (!parent || parent.closest("#admin-panel") || ["SCRIPT", "STYLE"].includes(parent.tagName)) continue;
+    if (node.nodeValue.trim()) nodes.push(node);
+  }
+  return nodes;
+}
+
+function buildAdminLists() {
+  adminTextList.innerHTML = "";
+  adminImageList.innerHTML = "";
+  adminTextNodes = getAdminTextNodes();
+  adminImages = Array.from(document.querySelectorAll("body img:not(#admin-panel img)"));
+
+  adminTextNodes.forEach((node, index) => {
+    const field = document.createElement("div");
+    field.className = "admin-field";
+    const label = document.createElement("label");
+    label.textContent = `${index + 1}. ${node.parentElement.tagName.toLowerCase()} mətni`;
+    const input = document.createElement("textarea");
+    input.value = node.nodeValue.trim();
+    input.dataset.adminTextIndex = index;
+    field.append(label, input);
+    adminTextList.appendChild(field);
+  });
+
+  adminImages.forEach((image, index) => {
+    const row = document.createElement("div");
+    row.className = "admin-image-row";
+    const preview = document.createElement("img");
+    preview.src = image.src;
+    preview.alt = "Şəkil önizləməsi";
+    const controls = document.createElement("div");
+    controls.className = "admin-field";
+    const label = document.createElement("label");
+    label.textContent = `${index + 1}. Şəkil URL-i`;
+    const urlInput = document.createElement("input");
+    urlInput.type = "text";
+    urlInput.value = image.getAttribute("src") || "";
+    urlInput.dataset.adminImageIndex = index;
+    urlInput.addEventListener("input", () => {
+      image.src = urlInput.value;
+      preview.src = urlInput.value;
+    });
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        image.src = reader.result;
+        preview.src = reader.result;
+        urlInput.value = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+    controls.append(label, urlInput, fileInput);
+    row.append(preview, controls);
+    adminImageList.appendChild(row);
+  });
+
+  document.getElementById("admin-site-title").value = document.title;
+  ["primary", "secondary", "accent"].forEach(name => {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim();
+    document.getElementById(`admin-${name}`).value = value || "#6c5ce7";
+  });
+}
+
+function saveAdminState() {
+  const textInputs = adminTextList.querySelectorAll("textarea");
+  textInputs.forEach(input => {
+    const node = adminTextNodes[Number(input.dataset.adminTextIndex)];
+    if (node) node.nodeValue = ` ${input.value} `;
+  });
+  adminImages.forEach((image, index) => {
+    const input = adminImageList.querySelector(`[data-admin-image-index="${index}"]`);
+    if (input && input.value) image.src = input.value;
+  });
+  const colors = {};
+  ["primary", "secondary", "accent"].forEach(name => {
+    colors[name] = document.getElementById(`admin-${name}`).value;
+    document.documentElement.style.setProperty(`--${name}`, colors[name]);
+  });
+  document.title = document.getElementById("admin-site-title").value || "Kids Center";
+  localStorage.setItem(adminStorageKey, JSON.stringify({
+    texts: adminTextNodes.map(node => node.nodeValue),
+    images: adminImages.map(image => image.getAttribute("src")),
+    title: document.title,
+    colors
+  }));
+  buildAdminLists();
+}
+
+function loadAdminState() {
+  const saved = localStorage.getItem(adminStorageKey);
+  if (!saved) return;
+  try {
+    const state = JSON.parse(saved);
+    const textNodes = getAdminTextNodes();
+    (state.texts || []).forEach((text, index) => {
+      if (textNodes[index]) textNodes[index].nodeValue = text;
+    });
+    const images = Array.from(document.querySelectorAll("body img:not(#admin-panel img)"));
+    (state.images || []).forEach((src, index) => {
+      if (images[index] && src) images[index].src = src;
+    });
+    if (state.title) document.title = state.title;
+    Object.entries(state.colors || {}).forEach(([name, value]) => {
+      document.documentElement.style.setProperty(`--${name}`, value);
+    });
+  } catch (error) {
+    localStorage.removeItem(adminStorageKey);
+  }
+}
+
+document.getElementById("admin-open").addEventListener("click", adminOpen);
+document.getElementById("admin-close").addEventListener("click", adminClose);
+document.getElementById("admin-live").addEventListener("click", adminClose);
+document.getElementById("admin-save").addEventListener("click", saveAdminState);
+document.getElementById("admin-reset").addEventListener("click", () => {
+  if (confirm("Bütün admin dəyişiklikləri silinsin?")) {
+    localStorage.removeItem(adminStorageKey);
+    location.reload();
+  }
+});
+adminPanel.addEventListener("click", event => {
+  if (event.target === adminPanel) adminClose();
+});
+
+loadAdminState();
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+}
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(tab => {
+tab.addEventListener("click", () => {
+
+tabs.forEach(t => t.classList.remove("active"));
+contents.forEach(c => c.classList.remove("active"));
+
+tab.classList.add("active");
+
+const id = tab.getAttribute("data-tab");
+document.getElementById(id).classList.add("active");
+
+});
+});
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+card.addEventListener("click", () => {
+
+if(card.classList.contains("active")){
+card.classList.remove("active");
+}else{
+
+cards.forEach(c => c.classList.remove("active"));
+card.classList.add("active");
+
+}
+
+});
+
+});
+  </script>
+  <script type="module" src="site-sync.js"></script>
+</body>
+</html>
